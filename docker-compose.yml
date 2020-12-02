@@ -1,0 +1,48 @@
+version: '3.2'
+
+services:
+  elasticsearch:
+    build:
+      context: elasticsearch/
+      args:
+        ELK_VERSION: $ELK_VERSION
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      ES_JAVA_OPTS: "-Xmx256m -Xms256m"
+      ELASTIC_PASSWORD: changeme
+      # Use single node discovery in order to disable production mode and avoid bootstrap checks
+      # see https://www.elastic.co/guide/en/elasticsearch/reference/current/bootstrap-checks.html
+      discovery.type: single-node
+    networks:
+      - elk
+
+  kibana:
+    build:
+      context: kibana/
+      args:
+        ELK_VERSION: $ELK_VERSION
+    ports:
+      - "5601:5601"
+    networks:
+      - elk
+    depends_on:
+      - elasticsearch
+
+  filebeat:
+    build:
+      context: filebeat/
+    networks:
+      - elk
+    volumes:
+        - ${GLOBAL_APP_PATH}filebeat/config/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
+        - ${GLOBAL_APP_PATH}log:/var/lib/docker/containers:ro
+    privileged: true
+
+networks:
+  elk:
+    driver: bridge
+
+volumes:
+  elasticsearch:
