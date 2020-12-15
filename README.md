@@ -1,26 +1,11 @@
 # docker-compose 部署efk
 docker-compose 一键部署elasticsearch、kibana、filebeat
-
-├── README.md
-├── docker-compose.yml
-├── elasticsearch
-│   ├── Dockerfile
-│   └── config
-│       └── elasticsearch.yml
-├── filebeat
-│   ├── Dockerfile
-│   └── config
-│       └── filebeat.yml
-├── kibana
-│   ├── Dockerfile
-│   └── config
-│       └── kibana.yml
-└── log
-    └── crontab
-        └── 20200823
-            └── 22.log
             
 启动步骤：
-1、docker-compose build    #构建容器
+1、将.env.example文件改名为.env文件
 
-2、docker-compose start    #一键启动elasticsearch、filebeat、kibana容器
+2、将GLOBAL_APP_PATH的路径修改为本项目路径
+
+3、docker-compose build    #构建容器
+
+4、docker-compose start    #一键启动elasticsearch、filebeat、kibana容器
