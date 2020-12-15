@@ -1,0 +1,45 @@
+---------------------------------------------------------------
+[ 2020-10-22T20:28:04+08:00 ] 172.18.0.1 GET class.chimelong.com/index/index/index.html
+[ info ] [ LANG ] /etc/nginx/html/class.chimelong.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; _gscu_321445574=958450699yxkhi20; _ga=GA1.2.1508981401.1595845070; __clickidc=159585707060949215; _hid=BFrO2s2pHl8kovo6R1XqxAA; _gscu_240243946=96081518g9q4id20; pgv_pvi=5974459392; bi_uuid=8f59cd765da2d97eacf5fc99737e2331; password=c273e15677ee90c2245ffc2cd7cf7bff; Hm_lvt_b393d153aeb26b46e9431fabaf0f6190=1601425608,1601457737,1601798901,1602405136; username=chimelong; Hm_lvt_caf040e08b6b0ec495a174386894be67=1600764298,1601430429,1603155890; thinkphp_show_page_trace=0|0; PHPSESSID=lq1mi19o5p63r2v37jp906s7e2',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://class.chimelong.com/index/login/index',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'class.chimelong.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 7200,
+)
+[ info ] [ RUN ] app\index\controller\index->index[ /etc/nginx/html/class.chimelong.com/application/index/controller/Index.php ]
+[ info ] [ LOG ] INIT File
+[ api ] [LOGhotelName] [RNO8A5B09CD-DC70-6E57-EC5D-2EAA8C92EE35][T1603369684.4575]
+测试一下
+---------------------------------------------------------------
+[ 2020-10-22T20:28:04+08:00 ] 172.18.0.1 GET class.chimelong.com/index/index/index.html
+[运行时间：0.316719s] [吞吐率：3.16req/s] [内存消耗：2,069.29kb] [文件加载：50]
+[ info ] [ VIEW ] /etc/nginx/html/class.chimelong.com/public/../application/index/view/index/index.html [ array (
+) ]

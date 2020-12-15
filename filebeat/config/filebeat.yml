@@ -7,23 +7,23 @@ filebeat.inputs:
     fields:
       source: job
     # 默认json日志在filebeat发送内容的json字段内，如需放在根root下，需打开此开关
-    json.keys_under_root: true
+    #json.keys_under_root: true
 
     # json字段是否覆盖filebeat默认的字段，例如日志的时间覆盖filebeat的@timestamp
-    json.overwrite_keys: true
+    #json.overwrite_keys: true
 
     # 当json出错时封装一个error.message错误消息字段
-    json.add_error_key: true
+    #json.add_error_key: true
 
     # json解析选项，当你的日志为json格式时启用，用于过滤单行和多行的设置。这个字段名必须是json根字段名且值必须是String类型，否则配置不生效。如果此项配置未定义，将无法使用多行配置
     #json.message_key:
     # 多行合并配置
     # 匹配的正则表达式，如下面的意思是匹配以日期格式yyyy-MM-dd HH:mm:ss 开头的行
-    #multiline.pattern: ''^[0-9]{4}-[0-9]{2}-[0-9]{2}''
+    multiline.pattern: '[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}\+[0-9]{2}:[0-9]{2}'
     # 是否取反，即当不以日期格式开头时
-    #multiline.negate: true
+    multiline.negate: true
     # 匹配规则，before 还是 after。三个配置加起来的意思是：  读取的行不以日期开头时，合并到以日期开头为一行。例如堆栈异常多行信息应当合并为一行消息
-    #multiline.match: after
+    multiline.match: after
 
 # 默认的模板名称是 "filebeat-%{[agent.version]}"，这里可以指定自定义的index template名称
 #setup.template.name: "service-log-"
